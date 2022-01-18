@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* body {
+  background-color: rgba(0, 0, 0, 0.6);
+} */
+
+#netflix {
+  width: 200px;
+  margin: 10px 0 0 20px;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+}
+
+#wallpaper {
+  background-image: url("https://i.ibb.co/h7TJCpd/AU-en-20220111-popsignuptwoweeks-perspective-alpha-website-small.jpg");
+  /* max-width: 100%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0; */
+  height: 750px;
+}
+
+.back {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 750px;
+}
+
+/* .black {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 900px;
+  position: absolute;
+  top: -800px;
+  z-index: 1;
+} */
+
+.nav-item {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+}
+
+.sign-in {
+  height: 40px;
+  width: 100px;
+  margin: 35px 40px 0 0;
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.texts {
+  color: red;
+  position: absolute;
+  top: 400px;
+}

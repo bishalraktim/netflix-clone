@@ -1,0 +1,57 @@
+$(document).ready(function () {
+  // $(this).scrollTop(0);
+
+  const topArrow = () => {
+    $(window).scrollTop(0);
+  };
+
+  $(".topArrow").click(function () {
+    topArrow();
+  });
+
+  // geolocation part
+  let show = document.getElementById("weather");
+  function geolocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      alert("Geo Not Supported");
+    }
+  }
+
+  function showPosition(data) {
+    console.log("show data", data);
+    // x.innerText = `Latitude is ${data.coords.latitude}, longitude is ${data.coords.longitude}`;
+    let lat = data.coords.latitude;
+    let long = data.coords.longitude;
+    var url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=-37.575481&lon=144.9017411&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+    // var url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${data.coords.latitude},${data.coords.longitude}&key=`;
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log("check", data);
+        console.log("country", data.city.country);
+        console.log("suburb", data.city.name);
+        /*data.list.map((item) => {
+    console.log(item.temp.day)
+    y.innerText=`${item.temp.day}°C and ${item.weather[0].description}`
+    z.innerHTML=`<img class='card-img-top' src='https://openweathermap.org/img/w/${item.weather[0].icon}.png'
+        alt='weather' />`
+    })*/
+        data.list.map((item) => {
+          console.log(item);
+          console.log(
+            `min temperature ${item.temp.min} and max temperature: ${item.temp.max}`
+          );
+          show.innerText = `min temperature ${item.temp.min} and max temperature: ${item.temp.max}`;
+          console.log(
+            `day temperature ${item.temp.day} and night temperature: ${item.temp.night}`
+          );
+          console.log("weather description", item.weather[0].description);
+        });
+      });
+  }
+
+  window.onload = geolocation();
+});
