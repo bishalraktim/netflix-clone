@@ -31,8 +31,8 @@ $(document).ready(function () {
       .then((res) => res.json())
       .then((data) => {
         // console.log("check", data);
-        console.log("country", data.city.country);
-        console.log("suburb", data.city.name);
+        document.getElementById("country-name").innerText = data.city.country;
+        document.getElementById("city-name").innerText = data.city.name;
         /*data.list.map((item) => {
     console.log(item.temp.day)
     y.innerText=`${item.temp.day}°C and ${item.weather[0].description}`
@@ -40,10 +40,14 @@ $(document).ready(function () {
         alt='weather' />`
     })*/
         data.list.map((item) => {
-          console.log(item);
+          // console.log(item);
           console.log(
             `min temperature ${item.temp.min} and max temperature: ${item.temp.max}`
           );
+          document.getElementById("min-tem").innerText = item.temp.min;
+          document.getElementById("max-tem").innerText = item.temp.max;
+          document.getElementById("desc").innerText =
+            item.weather[0].description;
           show.innerText = `min temperature ${item.temp.min} and max temperature: ${item.temp.max}`;
           console.log(
             `day temperature ${item.temp.day} and night temperature: ${item.temp.night}`
@@ -53,5 +57,5 @@ $(document).ready(function () {
       });
   }
 
-  window.onload = geolocation();
+  // window.onload = geolocation();
 });
