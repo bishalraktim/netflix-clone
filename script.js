@@ -20,7 +20,9 @@ $(document).ready(function () {
   }
 
   function showPosition(data) {
-    console.log("show data", data);
+    if (data) {
+      $("#we-ui").css("opacity", "1");
+    }
     // x.innerText = `Latitude is ${data.coords.latitude}, longitude is ${data.coords.longitude}`;
     let lat = data.coords.latitude;
     let long = data.coords.longitude;
@@ -41,21 +43,17 @@ $(document).ready(function () {
     })*/
         data.list.map((item) => {
           // console.log(item);
-          console.log(
-            `min temperature ${item.temp.min} and max temperature: ${item.temp.max}`
-          );
           document.getElementById("min-tem").innerText = item.temp.min;
           document.getElementById("max-tem").innerText = item.temp.max;
           document.getElementById("desc").innerText =
             item.weather[0].description;
-          show.innerText = `min temperature ${item.temp.min} and max temperature: ${item.temp.max}`;
-          console.log(
-            `day temperature ${item.temp.day} and night temperature: ${item.temp.night}`
-          );
-          console.log("weather description", item.weather[0].description);
         });
       });
   }
 
-  // window.onload = geolocation();
+  window.onload = geolocation();
+
+  $("#weather-button").click(function () {
+    $(".mainContainer").toggle("slow");
+  });
 });

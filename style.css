@@ -30,6 +30,7 @@ html {
   right: 0;
   left: 0; */
   height: 750px;
+  width: 100%;
 }
 
 .back {
@@ -40,6 +41,7 @@ html {
   left: 0;
   right: 0;
   height: 750px;
+  width: 100%;
 }
 
 /* .black {
@@ -88,20 +90,32 @@ html {
   justify-content: center;
   align-items: center;
 }
+
 .vcenter {
   display: flex;
   align-items: center;
 }
+
 .mainContainer {
-  width: 350px;
+  max-width: 350px;
   /* height: 590px; */
-  height: 650px;
+  height: 630px;
   margin: 0 auto;
   box-shadow: 0 0 10px #2323;
   margin-top: 50px;
   background: white;
   padding: 20px;
+  position: absolute;
+  top: -50px;
 }
+
+#we-ui {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  width: 100%;
+}
+
 .header {
   height: 70px;
   border-bottom: 2px solid #2323;
@@ -113,13 +127,16 @@ html {
   letter-spacing: 2px;
   color: #4b4b4b;
 }
+
 .header > h4 {
   color: #bdc3c7;
   letter-spacing: 2px;
 }
+
 .forecast {
   height: 300px;
 }
+
 .weather > img {
   height: 250px;
 }
@@ -188,6 +205,15 @@ html {
 .button-weather {
   display: flex;
   justify-content: flex-end;
-  margin-top: 50px;
+  margin-top: 90px;
 }
 /* weather ui ends */
+
+/* media query */
+@media screen and (max-width: 400px) {
+  .nav-item {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* media query */
