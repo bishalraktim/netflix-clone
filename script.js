@@ -51,7 +51,7 @@ $(document).ready(function () {
       });
   }
 
-  window.onload = geolocation();
+  // window.onload = geolocation();
 
   $("#weather-button").click(function () {
     $(".mainContainer").toggle("slow");
