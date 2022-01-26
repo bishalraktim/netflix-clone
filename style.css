@@ -9,26 +9,19 @@ html {
   scroll-behavior: smooth;
 }
 
-/* body {
-  background-color: rgba(0, 0, 0, 0.6);
-} */
+body {
+  background-color: #000000;
+}
 
 #netflix {
   width: 200px;
   margin: 10px 0 0 20px;
-  /* background-color: rgba(0, 0, 0, 0.2); */
 }
 
 #wallpaper {
   background-image: url("https://i.ibb.co/h7TJCpd/AU-en-20220111-popsignuptwoweeks-perspective-alpha-website-small.jpg");
-  /* max-width: 100%; */
   background-repeat: no-repeat;
   background-size: cover;
-  /* position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0; */
   height: 750px;
   width: 100%;
 }
@@ -44,23 +37,12 @@ html {
   width: 100%;
 }
 
-/* .black {
-  background: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 900px;
-  position: absolute;
-  top: -800px;
-  z-index: 1;
-} */
-
 .nav-item {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
   position: absolute;
   top: -10px;
   width: 100%;
-  /* background-color: rgba(0, 0, 0, 0.3); */
 }
 
 .sign-in {
@@ -78,10 +60,33 @@ html {
   box-shadow: none;
 }
 
-.texts {
+/* .texts {
   color: red;
   position: absolute;
   top: 400px;
+} */
+
+@media screen and (max-width: 400px) {
+  .nav-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-image {
+    width: 100%;
+  }
+
+  .sign-in {
+    margin: auto;
+  }
+
+  #netflix {
+    margin: 10px auto;
+  }
+
+  img {
+    width: 100%;
+  }
 }
 
 /* weather ui begins */
@@ -98,7 +103,6 @@ html {
 
 .mainContainer {
   max-width: 350px;
-  /* height: 590px; */
   height: 630px;
   margin: 0 auto;
   box-shadow: 0 0 10px #2323;
@@ -209,49 +213,22 @@ html {
 }
 /* weather ui ends */
 
-/* media query */
-@media screen and (max-width: 400px) {
-  .nav-item {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-/* media query */
-
 /* first section begins */
 .section1 {
-  /* width: 100%; */
-  background-color: #000000;
-  height: 500px;
+  height: 475px;
   display: flex;
   justify-content: space-between;
+  border-top: 8px solid #222;
+  border-bottom: 8px solid #222;
 }
 
-/* #video1 {
-  position: absolute;
-  z-index: 20;
-  max-width: 100%;
-} */
-
 #video2 {
-  /* width: 500px;
-  height: 445px; */
-  /* width: 100%;
-  height: 100%; */
-  /* top: -400px; */
-  max-width: 400px;
-  /* position: absolute; */
-  /* top: 130%; */
-  /* z-index: 0; */
-  margin-top: -427px;
+  max-width: 470px;
+  margin-top: -400px;
+  margin-right: 10px;
 }
 
 #video1 {
-  /* width: 472px; */
-  /* max-width: 100%;
-  margin: auto; */
-  /* position: absolute; */
-  /* top: -380px; */
   max-width: 100%;
   display: flex;
   justify-content: center;
@@ -259,20 +236,95 @@ html {
   z-index: 0;
 }
 
-/* #image-r1 {
-  max-width: 100%;
-  height: 700px;
-} */
-
 #real-image {
-  /* position: absolute;
-  z-index: 30; */
-  /* width: 100%;
-  height: 100%; */
-  /* position: absolute;
-  z-index: 2; */
   max-width: 550px;
   position: relative;
   z-index: 1;
+  margin-right: 80px;
+}
+
+.para1 {
+  color: #fff;
+  font-size: 50px;
+  margin-left: 80px;
+  margin-top: 80px;
+  font-weight: bold;
+  line-height: 55px;
+}
+
+.para2 {
+  color: #fff;
+  font-size: 25px;
+  margin-left: 80px;
+  line-height: 35px;
+}
+
+#para-first {
+  width: 600px;
+}
+
+@media screen and (max-width: 950px) {
+  .section1 {
+    flex-direction: column;
+    height: 600px;
+    width: 100%;
+  }
+
+  #video1 {
+    width: 100%;
+    position: absolute;
+  }
+
+  #video2 {
+    width: 100%;
+    margin-top: 80px;
+    margin-left: 10px;
+    max-height: 300px;
+    /* margin-right: 0; */
+    /* margin: auto; */
+  }
+
+  #img1 {
+    width: 100%;
+    display: flex;
+  }
+
+  #real-image {
+    width: 100%;
+    margin: auto;
+  }
+
+  #image-r1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #para-first {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .para1,
+  .para2 {
+    margin: auto;
+  }
+
+  .para1 {
+    font-size: 35px;
+    margin: 0 30px;
+  }
+
+  .para2 {
+    font-size: 20px;
+    margin: 0 30px;
+  }
+
+  .back {
+    width: 100%;
+  }
 }
 /* first section ends */
