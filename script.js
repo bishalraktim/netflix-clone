@@ -22,6 +22,7 @@ $(document).ready(function () {
   function showPosition(data) {
     if (data) {
       $("#we-ui").css("opacity", "1");
+      $("#home-titles").css("display", "none");
     }
     // x.innerText = `Latitude is ${data.coords.latitude}, longitude is ${data.coords.longitude}`;
     let lat = data.coords.latitude;
@@ -51,9 +52,10 @@ $(document).ready(function () {
       });
   }
 
-  // window.onload = geolocation();
+  window.onload = geolocation();
 
   $("#weather-button").click(function () {
     $(".mainContainer").toggle("slow");
+    $("#home-titles").css("display", "block");
   });
 });
